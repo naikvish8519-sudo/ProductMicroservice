@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Dot-NET-Microservices-with-Azure-and-AKS\\02. Products Microservice\\15. Swagger\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55DB54ED-D883-4155-AAA7-2C223A74BA30}|ProductsMicroService.API\\ProductsMicroService.API.csproj|e:\\dot-net-microservices-with-azure-and-aks\\02. products microservice\\15. swagger\\productsmicroservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{55DB54ED-D883-4155-AAA7-2C223A74BA30}|ProductsMicroService.API\\ProductsMicroService.API.csproj|solutionrelative:productsmicroservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC8EF0A-BB4E-47D7-B348-68D184896808}|DataAccessLayer\\DataAccessLayer.csproj|e:\\dot-net-microservices-with-azure-and-aks\\02. products microservice\\15. swagger\\dataaccesslayer\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AC8EF0A-BB4E-47D7-B348-68D184896808}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Dot-NET-Microservices-with-Azure-and-AKS\\02. Products Microservice\\15. Swagger\\ProductsMicroService.API\\appsettings.json",
+              "RelativeDocumentMoniker": "ProductsMicroService.API\\appsettings.json",
+              "ToolTip": "E:\\Dot-NET-Microservices-with-Azure-and-AKS\\02. Products Microservice\\15. Swagger\\ProductsMicroService.API\\appsettings.json*",
+              "RelativeToolTip": "ProductsMicroService.API\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-18T19:57:27.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "E:\\Dot-NET-Microservices-with-Azure-and-AKS\\02. Products Microservice\\15. Swagger\\DataAccessLayer\\Context\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Context\\ApplicationDbContext.cs",
+              "ToolTip": "E:\\Dot-NET-Microservices-with-Azure-and-AKS\\02. Products Microservice\\15. Swagger\\DataAccessLayer\\Context\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DataAccessLayer\\Context\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T19:57:16.845Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
