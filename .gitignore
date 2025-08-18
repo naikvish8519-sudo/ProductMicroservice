@@ -1,0 +1,24 @@
+# Ignore Visual Studio folder
+.vs/
+*.user
+*.suo
+
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# NuGet
+*.nupkg
+packages/
+
+# Others
+*.db
+*.log
+*.cache
+*.json.cache
+*.upToDate
+*.sourcelink.json
+*.FileListAbsolute.txt
