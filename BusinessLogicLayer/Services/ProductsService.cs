@@ -105,8 +105,20 @@ public class ProductsService : IProductsService
     return productResponses.ToList();
   }
 
+    public async Task<List<ProductResponse?>> SearchProducts(string searchString)
+    {
+        IEnumerable<Product?> products = await _productsRepository.SearchProducts(searchString);
+        IEnumerable<ProductResponse?> productResponses = _mapper.Map<IEnumerable<ProductResponse>>(products);
+        return productResponses.ToList();
+    }
+    //Task<IEnumerable<Product?>> IProductsService.SearchProducts(string searchString)
+    //{
+    //    throw new NotImplementedException();
+    //}
 
-  public async Task<ProductResponse?> UpdateProduct(ProductUpdateRequest productUpdateRequest)
+
+
+    public async Task<ProductResponse?> UpdateProduct(ProductUpdateRequest productUpdateRequest)
   {
     Product? existingProduct = await _productsRepository.GetProductByCondition(temp => temp.ProductID == productUpdateRequest.ProductID);
 
@@ -136,4 +148,6 @@ public class ProductsService : IProductsService
 
     return updatedProductResponse;
   }
+
+   
 }

@@ -54,4 +54,6 @@ public interface IProductsRepository
   /// <param name="productID">The product ID to be deleted</param>
   /// <returns>Returns true if the deletion is successful, false otherwise.</returns>
   Task<bool> DeleteProduct(Guid productID);
+
+  Task<IEnumerable<Product?>> SearchProducts(string searchString);
 }

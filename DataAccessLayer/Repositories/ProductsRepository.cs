@@ -2,6 +2,7 @@
 using eCommerce.DataAccessLayer.Context;
 using eCommerce.DataAccessLayer.RepositoryContracts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using System.Linq.Expressions;
 
 namespace eCommerce.DataAccessLayer.Repositories;
@@ -23,7 +24,18 @@ public class ProductsRepository : IProductsRepository
     return product;
   }
 
-  public async Task<bool> DeleteProduct(Guid productID)
+    public async Task<IEnumerable<Product?>> SearchProducts(string searchString)
+    {
+        return await _dbContext.Products
+            .Where(p =>
+                (!string.IsNullOrEmpty(p.ProductName) && p.ProductName.ToLower().Contains(searchString.ToLower())) ||
+                (!string.IsNullOrEmpty(p.Category) && p.Category.ToLower().Contains(searchString.ToLower()))
+            )
+            .ToListAsync();
+    }
+
+
+    public async Task<bool> DeleteProduct(Guid productID)
   {
     Product? existingProduct = await _dbContext.Products.FirstOrDefaultAsync(temp => temp.ProductID == productID);
     if (existingProduct == null)

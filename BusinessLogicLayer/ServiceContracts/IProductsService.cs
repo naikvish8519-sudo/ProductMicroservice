@@ -51,4 +51,11 @@ public interface IProductsService
   /// <param name="productID">ProductID to search and delete</param>
   /// <returns>Returns true if the deletion is successful; otherwise false</returns>
   Task<bool> DeleteProduct(Guid productID);
+
+
+    //Task<IEnumerable<Product?>> SearchProducts(string searchString);
+    Task<List<ProductResponse?>> SearchProducts(string searchString); // ✅ Correct
+
+
+
 }

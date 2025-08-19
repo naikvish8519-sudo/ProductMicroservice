@@ -25,21 +25,26 @@ public static class ProductAPIEndpoints
     });
 
 
-    //GET /api/products/search/xxxxxxxxxxxxxxxxxx
-    app.MapGet("/api/products/search/{SearchString}", async (IProductsService productsService, string SearchString) =>
-    {
-      List<ProductResponse?> productsByProductName = await productsService.GetProductsByCondition(temp => temp.ProductName != null && temp.ProductName.Contains(SearchString, StringComparison.OrdinalIgnoreCase));
+        //GET /api/products/search/xxxxxxxxxxxxxxxxxx
+        //app.MapGet("/api/products/search/{SearchString}", async (IProductsService productsService, string SearchString) =>
+        //{
+        //  List<ProductResponse?> productsByProductName = await productsService.GetProductsByCondition(temp => temp.ProductName != null && temp.ProductName.Contains(SearchString, StringComparison.OrdinalIgnoreCase));
 
-      List<ProductResponse?> productsByCategory = await productsService.GetProductsByCondition(temp => temp.Category != null && temp.Category.Contains(SearchString, StringComparison.OrdinalIgnoreCase));
+        //  List<ProductResponse?> productsByCategory = await productsService.GetProductsByCondition(temp => temp.Category != null && temp.Category.Contains(SearchString, StringComparison.OrdinalIgnoreCase));
 
-      var products = productsByProductName.Union(productsByCategory);
+        //  var products = productsByProductName.Union(productsByCategory);
 
-      return Results.Ok(products);
-    });
+        //  return Results.Ok(products);
+        //});
 
+        app.MapGet("/api/products/search/{SearchString}", async (IProductsService productsService, string SearchString) =>
+        {
+            List<ProductResponse?> products = await productsService.SearchProducts(SearchString);
+            return Results.Ok(products);
+        });
 
-    //POST /api/products
-    app.MapPost("/api/products", async (IProductsService productsService, IValidator<ProductAddRequest> productAddRequestValidator, ProductAddRequest productAddRequest) =>
+        //POST /api/products
+        app.MapPost("/api/products", async (IProductsService productsService, IValidator<ProductAddRequest> productAddRequestValidator, ProductAddRequest productAddRequest) =>
     {
       //Validate the ProductAddRequest object using Fluent Validation
       ValidationResult validationResult = await productAddRequestValidator.ValidateAsync(productAddRequest);
