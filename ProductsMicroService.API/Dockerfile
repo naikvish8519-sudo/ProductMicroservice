@@ -3,8 +3,8 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
+EXPOSE 8082
+EXPOSE 8083
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -22,4 +22,8 @@ RUN dotnet publish "./ProductsMicroService.API.csproj" -c $BUILD_CONFIGURATION -
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+# ✅ Inject DB connection string
+ENV ConnectionStrings__SqlServer="Server=tcp:host.docker.internal,1433;Database=Microservices;User Id=dockeruser;Password=StrongPass123!;Encrypt=True;TrustServerCertificate=True;"
+
 ENTRYPOINT ["dotnet", "ProductsMicroService.API.dll"]
