@@ -1,4 +1,5 @@
-﻿using eCommerce.DataAccessLayer.Entities;
+﻿using DataAccessLayer.Entities;
+using eCommerce.DataAccessLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 
@@ -15,8 +16,10 @@ public class ApplicationDbContext : DbContext
   }
 
   public DbSet<Product> Products { get; set; }
+  public DbSet<PizzaSize> PizzaSizes { get; set; }
+  public DbSet<Topping> Toppings { get; set; }
 
-  protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);
 
